@@ -13,8 +13,8 @@ public class BackendService {
     {
         users = new ArrayList<User>(); //will hold list of all current users
         //add first sample user
-        users.add(new User("mark.weideman63@gmail.com", "@Example1", "Mark", "Weideman",
-        "+1 4128319344"));
+        users.add(new User("random.user@gmail.com", "@Example1", "Matt", "Smith",
+        "+1 4128315622"));
     }
 
     public static List<User> getUsers() {

@@ -63,7 +63,7 @@ public class RegisterView extends Div {
     private Notification userExistsAlready = new Notification("User exists already");
     private Notification noMatch = new Notification("Passwords must match");
     private Notification badEmail = new Notification("Invalid email");
-    private Notification badCC = new Notification("Enter country code");
+    private Notification badCC = new Notification("Enter country code (include '+' )");
     private Notification badPhoneNum = new Notification("Invalid phone number");
     private Notification badPassWord = new Notification("Invalid password, see password rules button");
 
@@ -166,7 +166,7 @@ public class RegisterView extends Div {
     }
 
     public boolean goodNames(){ //makes both first and last name fields are not empty
-        if(firstname.getValue().length() > 0 && lastname.getValue().length() > 0){ //good input
+        if(!firstname.isEmpty() && !lastname.isEmpty()){ //good input
             notifications.remove(badNames); //remove notification b/c fields are not empty
             return true;
         }
@@ -181,7 +181,7 @@ public class RegisterView extends Div {
     public boolean passWordMatch(){ //make sure both password fields match, will check for password complexity in function below
         //checks that both password fields are not empty so it does not mistakenly match 2 empty password fields
             //and check if both password fields match
-        if(password.getValue().length() > 0 && password2.getValue().length() > 0 && password.getValue().equals(password2.getValue())){
+        if(!password.isEmpty() && !password2.isEmpty() && password.getValue().equals(password2.getValue())){
             //both password fields match
             notifications.remove(noMatch); //remove this notification of not matching passwords
             return true;

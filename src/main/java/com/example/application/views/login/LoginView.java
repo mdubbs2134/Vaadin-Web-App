@@ -41,7 +41,7 @@ public class LoginView extends Div {
         createFormLayout(wrapper);
         createButtonLayout(wrapper);
 
-        username.setAutofocus(true); //autoficus to username field
+        username.setAutofocus(true); //autofocus to username field
 
         cancel.addClickListener(e -> { //user wishes to cancel
             //clear fields
